@@ -4,21 +4,51 @@
     </head>
     <body style="background-color:#d3d6db;">
         <table border=2 bordercolor="#d48013" style="margin: auto;">
-            <tr><td colspan="2">
+            <tr><td colspan="8">
                 <h1 align="center" color="#00FFFF" style="line-height: 50px; height: 30px;">ASDL IOT Proto-Data-Dashboard</h1>
                 </td></tr>
             
-            <tr><td>
-                <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2010573/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+            <tr><td colspan="4">
+                <h3 align="center" color="#00FFFF" style="line-height: 30px; height: 12px;"> <u>Battery Charge Log</u></h3>
                 </td>
-                <td><iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2010573/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=10000&title=Temperature&type=line"></iframe>
+                <td colspan="4">
+                <h3 align="center" color="#00FFFF" style="line-height: 30px; height: 12px;"> <u>Temperature Log</u></h3>
                 </td></tr>
             
-            <tr><td>
+            <tr><td colspan="4">
+                <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2010573/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+                </td>
+                <td colspan="4"><iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2010573/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=10000&title=Temperature&type=line"></iframe>
+                </td></tr>
+            
+            <tr><td colspan="4">
+                <h3 align="center" color="#00FFFF" style="line-height: 30px; height: 12px;"> <u>Current Battery Percentage</u></h3>
+                </td>
+                <td colspan="4">
+                <h3 align="center" color="#00FFFF" style="line-height: 30px; height: 12px;"> <u>Battery Charging State</u></h3>
+                </td></tr>
+            
+            <tr><td colspan="4">
                 <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2010573/widgets/587910"></iframe>
                 </td>
-                <td><iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2010573/widgets/587911"></iframe>
+                <td colspan="4"><iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2010573/widgets/587911"></iframe>
                 </td></tr>
+            <tr><td colspan="8">
+                <h3 align="center" color="#00FFFF" style="line-height: 30px; height: 12px;"> <u>Charge State Key</u></h3>
+                </td></tr>
+            
+            <tr style="margin: auto;">
+                <td align="center" style="background-color:#858585;"> 0: State Unknown </td>
+                <td align="center" style="background-color:#816528;"> 1: Not Charging </td>
+                <td align="center" style="background-color:#FF9500;"> 2: Charging </td>
+                <td align="center" style="background-color:#37FF00;"> 3: Fully Charged </td>
+                <td align="center" style="background-color:#00FFEE;"> 4: Discharging </td>
+                <td align="center" style="background-color:#FF0000;"> 5: Battery Fault </td>
+                <td align="center" style="background-color:#000000; color:white;"> 6: Disconnected </td>
+            </tr>
+            
         </table>
+
+        
     </body>
 </html>
