@@ -1,0 +1,225 @@
+<html>
+    <head>
+        <title id>ASDL IOT Data-Dashboard</title>
+    </head>
+    <body style="background-color:#b0b0b0;" onload="firstLoad()">
+        <table border=5 bordercolor="#d48013" style="margin: auto; background-color:#c9c5bf;">
+            
+            <!--Primary Header-->
+            <tr>
+                <td colspan="8">
+                    <h1 align="center" color="#00FFFF" style="line-height: 50px; height: 30px; padding-top:5px;">ASDL IOT Data-Dashboard</h1>
+                    <table align="center">
+                        <tr>
+                            <td style="padding-right: 15px; padding-left: 15px; padding-bottom: 8px">
+                                <button onClick="window.location='index.html'">Home</button>
+                            </td>
+                            
+                            <td style="padding-right: 15px; padding-left: 15px; padding-bottom: 8px">
+                                <button onClick="window.location='sensors.html'">Sensor List</button>
+                            </td>
+                            
+                            <td style="padding-right: 15px; padding-left: 15px; padding-bottom: 8px">
+                                <button onClick="window.location='about.html'">About the Project</button>
+                            </td>
+                            
+                            <td style="padding-right: 15px; padding-left: 15px; padding-bottom: 8px">
+                                <button onClick="window.location='TBD1.html'">TBD1</button>
+                            </td>
+                            
+                            <td style="padding-right: 15px; padding-left: 15px; padding-bottom: 8px">
+                                <button onClick="window.location='TBD2.html'">TBD2</button>
+                            </td>
+                            
+                            <td style="padding-right: 15px; padding-left: 15px; padding-bottom: 8px">
+                                <button onClick="window.location='TBD3.html'">TBD3</button>
+                            </td>
+                            
+                            <td style="padding-right: 15px; padding-left: 15px; padding-bottom: 8px">
+                                <button onClick="window.location='TBD4.html'">TBD4</button>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td  colspan="7">
+                                <hr />
+                                <h3 align="center" color="#00FFFF">Current Sensor: ANTARES LTE</h3>
+                            </td>
+                        </tr>
+                        
+                    </table>
+                </td>
+            </tr>
+            
+            <!--First Row Titles-->
+            <tr>
+                
+                <td colspan="4">
+                    <table align="center">
+                        <tr>
+                            <td>
+                                <h3 align="center" color="#00FFFF" style="line-height: 30px; height: 12px; padding-right: 15px"> <u>Battery Charge Log</u></h3>
+                            </td>
+                            <td style="font-size: 20px"><b>|</b></td>
+                            <td>
+                                <p align="center" style=" padding-left: 15px;"> 
+                                    <input type="number" style="width: 5em;" min="1" max="10000" id="chargenum" value="1000">  <button onclick="updateChargeNum()">Set # Points</button>
+                                </p>
+                            </td>     
+                        </tr> 
+                    </table>
+                </td>
+                
+                <td colspan="4">
+                    <h3 align="center" color="#00FFFF" style="line-height: 30px; height: 12px;"> <u>Current Battery Percentage</u></h3>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="4">
+                    <iframe id="chargelevel" width="450" height="260" style="border: 1px solid #cccccc;" src=""></iframe>
+                </td>
+                <td colspan="4">
+                    <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2010573/widgets/587910"></iframe>
+                </td>
+            </tr>
+            
+            
+            
+            
+
+            <tr>
+                <td colspan="4">
+                    <table align="center">
+                        <tr>
+                            <td>
+                                <h3 align="center" color="#00FFFF" style="line-height: 30px; height: 12px; padding-right: 15px"> <u>Solar Panel Voltage</u></h3>
+                            </td>
+                            <td style="font-size: 20px"><b>|</b></td>
+                            <td>
+                                <p align="center" style=" padding-left: 15px;"> 
+                                    <input type="number" style="width: 5em;" min="1" max="10000" id="SVnum" value="1000">  <button onclick="updateSVNum()">Set # Points</button>
+                                </p>
+                            </td>     
+                        </tr> 
+                    </table>
+                </td>
+                
+                <td colspan="4">
+                    <h3 align="center" color="#00FFFF" style="line-height: 30px; height: 12px;"> <u>Battery Charging State</u></h3>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="4">
+                    <iframe id="SVlevel" width="450" height="260" style="border: 1px solid #cccccc;" src=""></iframe>
+                </td>
+                <td colspan="4">
+                    <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2010573/widgets/587911"></iframe>
+                </td>
+            </tr>
+
+            
+            
+            
+            
+            <tr>
+                <td colspan="4">
+                    <table align="center">
+                        <tr>
+                            <td>
+                                <h3 align="center" color="#00FFFF" style="line-height: 30px; height: 12px; padding-right: 15px"> <u>Regulator Voltage</u></h3>
+                            </td>
+                            <td style="font-size: 20px"><b>|</b></td>
+                            <td>
+                                <p align="center" style=" padding-left: 15px;"> 
+                                    <input type="number" style="width: 5em;" min="1" max="10000" id="RVnum" value="1000">  <button onclick="updateRVNum()">Set # Points</button>
+                                </p>
+                            </td>     
+                        </tr> 
+                    </table>
+                </td>
+                
+                <td colspan="4">
+                    <h3 align="center" color="#00FFFF" style="line-height: 30px; height: 12px;"> <u>N/A</u></h3>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="4">
+                    <iframe id="RVlevel" width="450" height="260" style="border: 1px solid #cccccc;" src=""></iframe>
+                </td>
+                <td colspan="4">
+                    
+                </td>
+            </tr>
+
+
+
+            
+            
+            
+            <tr>
+                <td colspan="8">
+                    <h3 align="center" color="#00FFFF" style="line-height: 30px; height: 12px;"> <u>Charge State Key</u></h3>
+                </td>
+            </tr>
+
+            <tr style="margin: auto;">
+                <td align="center" style="background-color:#858585;"> 0: State Unknown </td>
+                <td align="center" style="background-color:#816528;"> 1: Not Charging </td>
+                <td align="center" style="background-color:#FF9500;"> 2: Charging </td>
+                <td align="center" style="background-color:#37FF00;"> 3: Fully Charged </td>
+                <td align="center" style="background-color:#00FFEE;"> 4: Discharging </td>
+                <td align="center" style="background-color:#FF0000;"> 5: Battery Fault </td>
+                <td align="center" style="background-color:#000000; color:white;"> 6: Disconnected </td>
+            </tr>
+        </table>
+
+
+        
+        
+<!-- Scripts that manage chart data points -->  
+        
+        <script>  
+            function firstLoad(){
+                updateChargeNum();
+                updateSVNum();
+                updateRVNum();
+            }
+
+
+            function updateChargeNum() {
+                let str1 = "https://thingspeak.com/channels/2010573/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=";
+                let str2 = "&type=line&update=15"
+                var chg = document.getElementById("chargenum").value;
+
+                let str3 = str1+chg.toString()+str2;
+
+                document.getElementById("chargelevel").src=str3;
+            }
+
+            function updateSVNum() {
+                let str1 = "https://thingspeak.com/channels/2010573/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=";
+                let str2 = "&title=Solar+Panel+Voltage&type=line"
+                var chg = document.getElementById("SVnum").value;
+
+                let str3 = str1+chg.toString()+str2;
+
+                document.getElementById("SVlevel").src=str3;
+            }
+
+            function updateRVNum() {
+                let str1 = "https://thingspeak.com/channels/2010573/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=";
+                let str2 = "&title=Regulator+Voltage&type=line"
+                var chg = document.getElementById("RVnum").value;
+
+                let str3 = str1+chg.toString()+str2;
+
+                document.getElementById("RVlevel").src=str3;
+            }
+
+
+        </script>
+    </body>
+</html>
