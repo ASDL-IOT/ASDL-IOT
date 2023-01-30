@@ -45,32 +45,20 @@
 
             </div>
 
-
-
-            <!--
-<div id="header">                <div id="wordmark"><img src="images/image-wordmark.svg"></div>
-</div>
--->
             <div id="main">
                 <h1 id="strapline">Sensor: SENSOR-NAME</h1>
-                <p id="copy">The aim of this project is to create simple, beautifully crafted ID cards. The cards have been designed to show off everything you love about your character!
-                    The project is invite-only at the moment while the details are finalised. If you have been invited to participate, please follow the link below to get started.</p>
+                <p id="copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
             </div>           
-
-            <div id="dual-container">
-                <div id="halfcharts">
-                    <div id="gauge_div"></div>
-                </div>
-                <div id="large-spacer"></div>
-                <div id="halfcharts">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d829.0592913692578!2d-84.38813947075961!3d33.780373213485305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzPCsDQ2JzQ5LjMiTiA4NMKwMjMnMTUuMyJX!5e0!3m2!1sen!2sus!4v1675053379814!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
             
-            <div id = "mid-buffer"></div>
 
 
             <!--Each ThingSpeak Chart-->
+            <div id = "mid-buffer"></div>
+            <div id="main">
+                <h2 id="strapline"><u>SENSOR-NAME Battery</u></h2>
+            </div>
+            <div id = "mid-buffer"></div>
+
             <div id="thingspeakcharts">
                 <iframe id="chargelevel" src=""></iframe>
             </div>
@@ -83,11 +71,17 @@
                     <a class="form-button" type="button" href="#"  onclick="updateChargeNum();event.preventDefault();">Set # Points</a>
                 </div>
             </div>
-
-            <div id = "mid-buffer"></div>
+            <div id = "midline"></div>
+            
             <!--END-->
 
             <!--Each ThingSpeak Chart-->
+            <div id = "mid-buffer"></div>
+            <div id="main">
+                <h2 id="strapline"><u>SENSOR-NAME Solar Panel Voltage</u></h2>
+            </div>
+            <div id = "mid-buffer"></div>
+
             <div id="thingspeakcharts">
                 <iframe id="SVlevel" src=""></iframe>
             </div>
@@ -100,11 +94,16 @@
                     <a class="form-button" type="button" href="#"  onclick="updateSVNum();event.preventDefault();">Set # Points</a>
                 </div>
             </div>
-
-            <div id = "mid-buffer"></div>
+            <div id = "midline"></div>
+            
             <!--END-->
 
             <!--Each ThingSpeak Chart-->
+            <div id = "mid-buffer"></div>
+            <div id="main">
+                <h2 id="strapline"><u>SENSOR-NAME Regulator Voltage</u></h2>
+            </div>
+            <div id = "mid-buffer"></div>
             <div id="thingspeakcharts">
                 <iframe id="RVlevel" src=""></iframe>
             </div>
@@ -120,25 +119,29 @@
 
             <div id = "mid-buffer"></div>
             <!--END-->
-
-            <div id="example">
-                <div><img src="images/image-card-example.svg"></div>
-            </div>
+            
+    
             <div id="price-container">
                 <div id="price-content">
-                    <h1 id="strapline-dark">What you get</h1>
-                    <div><img src="images/image-pawprint-wyg.svg"></div>
-                    <p id="copy-dark"> 
-                        &bull; <b>2x</b> Pawprint Cards <br>
-                        &bull; Recycled cardboard presentation wallet <br>
-                        &bull; A fox thinks you&rsquo;re cool <br><br>
-                        <b>$25</b> (inc. shipping - see FAQ for details!)
-                    </p> 
+                    <h1 id="strapline">Sensor Location</h1>
                 </div>
+                <div id="thingspeakcharts">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d829.0592913692578!2d-84.38813947075961!3d33.780373213485305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzPCsDQ2JzQ5LjMiTiA4NMKwMjMnMTUuMyJX!5e0!3m2!1sen!2sus!4v1675053379814!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div id = "mid-buffer"></div>
+                <div id = "mid-buffer"></div>
+                
+                <div id="thingspeakcharts">
+                    <img src="images/img.jpg">
+                </div>
+                <div id = "mid-buffer"></div>
+                <div id = "mid-buffer"></div>
+                <div id = "mid-buffer"></div>
+
             </div>
-            <div id="ctr-image"><img src="images/image-pawprint-price.svg"></div>
+
             <div id="cta">
-                <a class="cta-button" href="register.html">Register interest</a>
+                <a class="cta-button" href="https://thingspeak.com/channels/2010573/import_export">ThingSpeak CSV Export</a>
             </div>
         </div>
 
@@ -180,6 +183,11 @@
 
                 document.getElementById("RVlevel").src=str3;
             }
+            
+            
+            
+            
+            
         </script>
     </body>
 </html>

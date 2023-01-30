@@ -164,6 +164,14 @@ h1 {
     border-radius: 20px;
 }
 
+#thingspeakcharts img{
+    width: 100%;
+    height: auto;
+    border: 0px ;
+    border-radius: 20px;
+}
+
+
 #halfcharts{
     max-width: var(--body-max-width);
     margin-left: auto;
@@ -179,18 +187,18 @@ h1 {
 }
 
 #strapline {
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 0;
 }
 
 #strapline-dark {
     margin-top: 20;
-    margin-bottom: 40;
+    margin-bottom: 10;
     color: var(--body-background-color);
 }
 
 #copy {
-    margin-top: 50px;
+    margin-top: 20px;
     margin-bottom: 0;
     padding: 0;
 }
@@ -313,8 +321,9 @@ h1 {
 }
 
 #price-container {
-    background-color: #D8D8D8; 
+    background-color: #948a55; 
 }
+
 
 #logo-only-container {
     max-width: var(--body-max-width);
@@ -358,7 +367,17 @@ h1 {
 
 #mid-buffer {
     min-width: 10px;
-    height: 50px;
+    height: 20px;
+    
+}
+
+#midline{
+    max-width: var(--body-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%; 
+    border-top: 2.5px dashed rgba(255, 255, 255, 255);
+
 }
 
 
