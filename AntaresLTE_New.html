@@ -157,7 +157,7 @@
                     <input type="number" min="1" max="20000" value="10000" id ="chargenum" class="form-control">
                 </div> 
                 <div id="small-cta">
-                    <a class="form-button" type="button" href="#"  onclick="updateChargeNum();event.preventDefault();">Set # Points</a>
+                    <a class="form-button" type="button" href="#"  onclick="updateCRNum();event.preventDefault();">Set # Points</a>
                 </div>
             </div>
             <div id = "midline"></div>
@@ -167,20 +167,20 @@
             <!--Each ThingSpeak Chart-->
             <div id = "mid-buffer"></div>
             <div id="main">
-                <h2 id="strapline"><u>Solar Panel Voltage</u></h2>
+                <h2 id="strapline"><u>Input Voltage</u></h2>
             </div>
             <div id = "mid-buffer"></div>
 
             <div id="thingspeakcharts">
-                <iframe id="SVlevel" src=""></iframe>
+                <iframe id="IVlevel" src=""></iframe>
             </div>
 
             <div id="selection-container">
                 <div id="small-cta">
-                    <input type="number" min="1" max="20000" value="10000" id ="SVnum" class="form-control">
+                    <input type="number" min="1" max="20000" value="10000" id ="IVnum" class="form-control">
                 </div> 
                 <div id="small-cta">
-                    <a class="form-button" type="button" href="#"  onclick="updateSVNum();event.preventDefault();">Set # Points</a>
+                    <a class="form-button" type="button" href="#"  onclick="updateIVnum();event.preventDefault();">Set # Points</a>
                 </div>
             </div>
             <div id = "midline"></div>
@@ -190,19 +190,84 @@
             <!--Each ThingSpeak Chart-->
             <div id = "mid-buffer"></div>
             <div id="main">
-                <h2 id="strapline"><u>Regulator Voltage</u></h2>
+                <h2 id="strapline"><u>CO2 Levels (PPM)</u></h2>
             </div>
             <div id = "mid-buffer"></div>
             <div id="thingspeakcharts">
-                <iframe id="RVlevel" src=""></iframe>
+                <iframe id="COlevel" src=""></iframe>
             </div>
 
             <div id="selection-container">
                 <div id="small-cta">
-                    <input type="number" min="1" max="20000" value="10000" id ="RVnum" class="form-control">
+                    <input type="number" min="1" max="20000" value="10000" id ="CONum" class="form-control">
                 </div> 
                 <div id="small-cta">
-                    <a class="form-button" type="button" href="#"  onclick="updateRVNum();event.preventDefault();">Set # Points</a>
+                    <a class="form-button" type="button" href="#"  onclick="updateCONum();event.preventDefault();">Set # Points</a>
+                </div>
+            </div>
+            <div id = "midline"></div>
+            <!--END-->
+            
+            <!--Each ThingSpeak Chart-->
+            <div id = "mid-buffer"></div>
+            <div id="main">
+                <h2 id="strapline"><u>Temperature (C)</u></h2>
+            </div>
+            <div id = "mid-buffer"></div>
+            <div id="thingspeakcharts">
+                <iframe id="TMlevel" src=""></iframe>
+            </div>
+
+            <div id="selection-container">
+                <div id="small-cta">
+                    <input type="number" min="1" max="20000" value="10000" id ="TMNum" class="form-control">
+                </div> 
+                <div id="small-cta">
+                    <a class="form-button" type="button" href="#"  onclick="updateTMNum();event.preventDefault();">Set # Points</a>
+                </div>
+            </div>
+
+            <div id = "midline"></div>
+            <!--END-->
+            
+                        <!--Each ThingSpeak Chart-->
+            <div id = "mid-buffer"></div>
+            <div id="main">
+                <h2 id="strapline"><u>Humidity (%)</u></h2>
+            </div>
+            <div id = "mid-buffer"></div>
+            <div id="thingspeakcharts">
+                <iframe id="HMlevel" src=""></iframe>
+            </div>
+
+            <div id="selection-container">
+                <div id="small-cta">
+                    <input type="number" min="1" max="20000" value="10000" id ="HMNum" class="form-control">
+                </div> 
+                <div id="small-cta">
+                    <a class="form-button" type="button" href="#"  onclick="updateHMNum();event.preventDefault();">Set # Points</a>
+                </div>
+            </div>
+
+            <div id = "midline"></div>
+            <!--END-->
+            
+                        <!--Each ThingSpeak Chart-->
+            <div id = "mid-buffer"></div>
+            <div id="main">
+                <h2 id="strapline"><u>Pressure (HPa)</u></h2>
+            </div>
+            <div id = "mid-buffer"></div>
+            <div id="thingspeakcharts">
+                <iframe id="PRlevel" src=""></iframe>
+            </div>
+
+            <div id="selection-container">
+                <div id="small-cta">
+                    <input type="number" min="1" max="20000" value="10000" id ="PRNum" class="form-control">
+                </div> 
+                <div id="small-cta">
+                    <a class="form-button" type="button" href="#"  onclick="updatePRNum();event.preventDefault();">Set # Points</a>
                 </div>
             </div>
 
@@ -238,14 +303,18 @@
 
         <script>  
             function firstLoad(){
-                updateChargeNum();
-                updateSVNum();
-                updateRVNum();
+                updateCRNum();
+                updateIVnum();
+                updateCONum();
+                updateTMNum();
+                updateHMNum();
+                updatePRNum();
+                
             }
 
-            function updateChargeNum() {
+            function updateCRNum() {
                 let str1 = "https://thingspeak.com/channels/2010573/charts/1?width=auto&height=auto&bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=";
-                let str2 = "&type=line&update=15"
+                let str2 = "&title=Battery+History&type=line&update=15"
                 var chg = document.getElementById("chargenum").value;
 
                 let str3 = str1+chg.toString()+str2;
@@ -253,29 +322,55 @@
                 document.getElementById("chargelevel").src=str3;
             }
 
-            function updateSVNum() {
+            function updateIVnum() {
                 let str1 = "https://thingspeak.com/channels/2010573/charts/3?width=auto&height=auto&bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=";
-                let str2 = "&title=Solar+Panel+Voltage&type=line"
-                var chg = document.getElementById("SVnum").value;
+                let str2 = "&title=Input+Voltage&type=line"
+                var chg = document.getElementById("IVnum").value;
 
                 let str3 = str1+chg.toString()+str2;
 
-                document.getElementById("SVlevel").src=str3;
+                document.getElementById("IVlevel").src=str3;
             }
 
-            function updateRVNum() {
+            function updateCONum() {
                 let str1 = "https://thingspeak.com/channels/2010573/charts/4?width=auto&height=auto&bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=";
-                let str2 = "&title=Regulator+Voltage&type=line"
-                var chg = document.getElementById("RVnum").value;
+                let str2 = "&title=CO2+Levels&type=line"
+                var chg = document.getElementById("CONum").value;
 
                 let str3 = str1+chg.toString()+str2;
 
-                document.getElementById("RVlevel").src=str3;
+                document.getElementById("COlevel").src=str3;
             }
+            
+            function updateTMNum() {
+                let str1 = "https://thingspeak.com/channels/2010573/charts/5?width=auto&height=auto&bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=";
+                let str2 = "&title=Temperature&type=line"
+                var chg = document.getElementById("TMNum").value;
 
+                let str3 = str1+chg.toString()+str2;
 
+                document.getElementById("TMlevel").src=str3;
+            }
+            
+            function updateHMNum() {
+                let str1 = "https://thingspeak.com/channels/2010573/charts/6?width=auto&height=auto&bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=";
+                let str2 = "&title=Humidity&type=line"
+                var chg = document.getElementById("HMNum").value;
 
+                let str3 = str1+chg.toString()+str2;
 
+                document.getElementById("HMlevel").src=str3;
+            }
+            
+            function updatePRNum() {
+                let str1 = "https://thingspeak.com/channels/2010573/charts/7?width=auto&height=auto&bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=";
+                let str2 = "&title=Pressure&type=line"
+                var chg = document.getElementById("PRNum").value;
+
+                let str3 = str1+chg.toString()+str2;
+
+                document.getElementById("PRlevel").src=str3;
+            }
 
         </script>
     </body>
