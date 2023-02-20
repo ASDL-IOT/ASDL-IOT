@@ -406,6 +406,20 @@ h1 {
     height: 90;
 }
 
+#small-wordmark {
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+}
+
+#small-wordmark img {
+    padding-top: 15px;
+    padding-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 40px;
+}
+
 #large-header > .large-cta-button {
     flex-grow: 1;
 }
