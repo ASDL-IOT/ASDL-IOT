@@ -42,14 +42,29 @@
 
 
         <div id="main-container">
-            
 
-            
-<div id = "mid-buffer"></div>
+
+
+            <div id = "mid-buffer"></div>
             <div id="main">
-                <h1 id="strapline">Sensor: ANTARES-LTE</h1>
+                <h1 id="strapline">Project: CNES Air Quality</h1>
                 <p id="copy">This is the first sensor package prototyped by the ASDL IoT Team. Powered by a Particle Boron 404x LTE Cellular Modem, it communicates a series of air quality parameters to the cloud, independent of any Wi-Fi network. Once set up, it can be placed anywhere indoors or outdoors, and will automatically resume transmission. This sensor package reads data every <b>5 seconds</b>, averaging the values and pushing to the cloud every <b>10 minutes</b>.</p><p id="copy">In addition to the air quality parameters, the device also reports current vitals, such as battery percentage and state of charge. These parameters can be found below.</p>
             </div>
+            <div id = "mid-buffer"></div>
+
+
+            <div id="row">
+                <div id="large-spacer"></div><h1 id="strapline">Selected Sensor:</h1>
+                <div id="large-spacer"></div>
+                <select name="sensors" class="dropdown">
+                <option value="Antares">Antares</option>
+                <option value="Arcalis">Arcalis</option>
+                <option value="Alcyone">Alcyone</option>
+                <option value="Asterope">Asterope</option>
+                <option value="Atlas">Atlas</option>
+            </select>
+            </div>
+
             <div id = "mid-buffer"></div>
             <div id = "mid-buffer"></div>
 
@@ -58,7 +73,7 @@
                     <h1 id="strapline-dark">Sensor Vitals</h1>
                 </div>
 
-                
+
                 <div id="row">
                     <div id="halftitles">
                         <h3 id="copy-dark">Current Battery %</h3>
@@ -68,7 +83,7 @@
                         <h3 id="copy-dark">Charge State</h3>
                     </div>
                 </div>
-                
+
                 <div id="row">
                     <div id="halfcharts">
                         <iframe src="https://thingspeak.com/channels/2027273/widgets/602692"></iframe>
@@ -78,11 +93,11 @@
                         <iframe src="https://thingspeak.com/channels/2027273/widgets/602693"></iframe>
                     </div>
                 </div>
-                
+
                 <div id="small-wordmark"><a><img src="images/key.svg"></a></div>
 
-                
-                
+
+
             </div>
 
 
@@ -156,7 +171,7 @@
             </div>
             <div id = "midline"></div>
             <!--END-->
-            
+
             <!--Each ThingSpeak Chart-->
             <div id = "mid-buffer"></div>
             <div id="main">
@@ -178,8 +193,8 @@
 
             <div id = "midline"></div>
             <!--END-->
-            
-                        <!--Each ThingSpeak Chart-->
+
+            <!--Each ThingSpeak Chart-->
             <div id = "mid-buffer"></div>
             <div id="main">
                 <h2 id="strapline"><u>Humidity (%)</u></h2>
@@ -200,8 +215,8 @@
 
             <div id = "midline"></div>
             <!--END-->
-            
-                        <!--Each ThingSpeak Chart-->
+
+            <!--Each ThingSpeak Chart-->
             <div id = "mid-buffer"></div>
             <div id="main">
                 <h2 id="strapline"><u>Pressure (HPa)</u></h2>
@@ -258,7 +273,7 @@
                 updateTMNum();
                 updateHMNum();
                 updatePRNum();
-                
+
             }
 
             function updateCRNum() {
@@ -277,7 +292,7 @@
                 let str2 = "&dynamic=true&title=Input Voltage&type=spline"
                 var chg = document.getElementById("IVnum").value;
                 chg = Math.round(chg);
-                
+
                 let str3 = str1+chg.toString()+str2;
 
                 document.getElementById("IVlevel").src=str3;
@@ -293,7 +308,7 @@
 
                 document.getElementById("COlevel").src=str3;
             }
-            
+
             function updateTMNum() {
                 let str1 = "https://thingspeak.com/channels/2027273/charts/5?width=auto&height=auto&days=";
                 let str2 = "&dynamic=true&title=Temperature&type=spline"
@@ -304,7 +319,7 @@
 
                 document.getElementById("TMlevel").src=str3;
             }
-            
+
             function updateHMNum() {
                 let str1 = "https://thingspeak.com/channels/2027273/charts/6?width=auto&height=auto&days=";
                 let str2 = "&dynamic=true&title=Humidity&type=spline"
@@ -315,7 +330,7 @@
 
                 document.getElementById("HMlevel").src=str3;
             }
-            
+
             function updatePRNum() {
                 let str1 = "https://thingspeak.com/channels/2027273/charts/7?width=auto&height=auto&days=";
                 let str2 = "&dynamic=true&title=Pressure&type=spline"
