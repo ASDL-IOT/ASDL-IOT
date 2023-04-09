@@ -61,7 +61,7 @@
                 <div id="price-content">
                     <h1 id="header-light-dark">Sensor Vitals</h1>
                 </div>
-                
+
                 <div id="row">
                     <div id="halftitles">
                         <h3 id="text-header-light-dark">Current Battery %</h3>
@@ -83,11 +83,20 @@
                 </div>
 
                 <div id="small-wordmark"><a><img src="images/key.svg"></a></div>
-                
+
+<!--
                 <div id="small-cta" style="align-self: center;">
-                    <a class="ping-button" src="test" style="margin-left:auto;width:20em;" type="button" id="statusFlag"> </a>        
+                    <a class="ping-button" src="test" style="margin-left:auto;width:20em;" type="button" > </a>        
                 </div>
                 <div id = "mid-buffer"></div>
+-->
+                
+                <section>
+                    <div class="progressbarWrapper" id="statusFlag"> 
+                        <span id="greenBar"> </span>
+                    </div>
+                
+                </section>
             </div>
 
 
@@ -257,7 +266,8 @@
             var ChannelID;
             var BattWidgetID;
             var StateWidgetID;
-            
+            var UpdateFrequency = 600;
+
             IDs();
             setInterval(updateFlags, 10000);
 
@@ -306,7 +316,7 @@
             function updateFlags(){
                 getLastSignal(ChannelID);
             }
-            
+
             function updateSensor(element){
                 var inputID  = element + "_IN";
                 var outputID = element + "_OUT";
@@ -319,7 +329,7 @@
 
                 strOUT = thingspeak + ChannelID + "/charts/" + element + "?width=auto&height=auto&days=" + chg.toString() + "&dynamic=true&title=" + ttl + "&type=spline";
                 document.getElementById(outputID).src=strOUT;
-                
+
                 getLastSignal(ChannelID);
             }
 
@@ -328,20 +338,26 @@
                 document.getElementById("BattWidget").src=strOUT+BattWidgetID;
                 document.getElementById("StateWidget").src=strOUT+StateWidgetID;
             }
-            
+
             async function getLastSignal(channel) {
                 var sns = document.getElementById("sensors").value;
-                
+
                 let file = "https://api.thingspeak.com/channels/" + channel + "/fields/1/last_data_age.txt";
                 let myObject = await fetch(file);
                 let myText = await myObject.text();
                 var time = parseInt(myText);
+                var pct = Math.round(100*time/UpdateFrequency);
+                if (pct > 100){
+                    pct = 100;
+                }
+                str2 = "width:" + pct.toString() + "%;";
                 if (time < 1000){
-                    str = "<i>" + sns + "'s Last Ping: T+ " + myText +"s / 600s</i>"
+                    str = "<i>" + sns + "'s Last Ping: T+ " + myText +"s / 600s</i> <span id=greenBar> </span>";
                 } else {
-                    str = "<i style=color:#EA0606;>" + sns + " is Offline</i>"
+                    str = "<i style=color:#EA0606;>" + sns + " is Offline</i>";
                 }
                 document.getElementById("statusFlag").innerHTML = str;
+                document.getElementById("greenBar").style = str2;
             }
 
         </script>

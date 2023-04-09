@@ -68,6 +68,7 @@ body {
     background-color: var(--body-background-color);
     color: var(--body-font-color);
     font-size: var(--body-font-size);
+
 }
 
 #main-container {
@@ -234,6 +235,48 @@ h1 {
     text-align: justify;
 }
 
+.progressbarWrapper {
+    border: 4px solid var(--body-background-color);
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 25px;
+    line-height: 37px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 20px;
+    padding-left: 20px;
+    height: 50px;
+    color: var(--body-background-color);
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+    width: 20em;
+    max-width: 100%;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    position: relative;
+    border-radius: 12px;
+    box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+    text-align: center;
+    z-index: 10;
+}
+
+#greenBar {
+    display: block;
+    height: 100%;
+    width: 80%;
+    border-radius: 8px;
+    background-color: #948a55;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    font-size: 15px;
+    text-align: center;
+    z-index: -1;
+}
+
+
 #text-header-light-dark {
     margin-top: 3px;
     margin-bottom: 3px;
@@ -289,16 +332,16 @@ h1 {
 }
 
 .cta-button:hover {
-    background: #866DBA;
+    background: #948a55;
 }
 
 #large-header {
     background: var(--large-header-background-color);
     display: flex;
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
-  width: 100%; /* Full width */
-
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    z-index: 20;
 
 
     margin-bottom: 0px;
@@ -317,9 +360,9 @@ h1 {
     display: flex;
     flex-direction: row;
     align-items: center;
-    
-    
-    
+
+
+
 }
 
 #menu-header-container {
@@ -332,8 +375,8 @@ h1 {
     align-items: center;
     margin-bottom: 15px;
     height: 55px;
-    
-    
+
+
 }
 
 #button-container {
@@ -361,7 +404,7 @@ h1 {
     margin-right: auto;
     margin-top:18px;
     margin-bottom: 10px;
-        display: flex;
+    display: flex;
     flex-direction: row;
     align-items: center;
 }
@@ -376,7 +419,7 @@ h1 {
     margin-bottom: 0px;
     flex-direction: row;
     align-items: center;
-    
+
 }
 
 #sensorrow {
@@ -389,7 +432,7 @@ h1 {
     margin-bottom: 0px;
     flex-direction: row;
     align-items: center;
-    
+
 }
 
 #price-content {
@@ -475,7 +518,7 @@ h1 {
 #mid-buffer {
     min-width: 10px;
     height: 20px;
-    
+
 }
 
 #midline{
@@ -607,7 +650,7 @@ h1 {
 }
 
 .form-button:hover {
-    background: #866DBA;
+    background: #948a55;
     color: var(--body-font-color);
 }
 
@@ -690,7 +733,7 @@ h1 {
     font-weight: 400;
     text-decoration: none;
     white-space: nowrap;
-    
+
 }
 
 .large-cta-button:link {
@@ -702,7 +745,7 @@ h1 {
 }
 
 .large-cta-button:hover {
-    background: #866DBA;
+    background: #948a55;
     color: var(--body-font-color);
 }
 
@@ -724,86 +767,86 @@ h1 {
     #small-cta {
         align-self: flex-start
     }
-    
+
     #wordmark {
         display: none;
     }
 
-     #logo-only-container {
+    #logo-only-container {
         display: none;
     }
-    
+
     #header-light {
         text-align: start;
     }
-    
+
     #big-link {
         text-align: start;  
         padding-top: 10px
     }
 
     #ctr-image {
-    margin-left: 180px;
-    margin-right: 200px;
+        margin-left: 180px;
+        margin-right: 200px;
     }
-    
+
     #text-light {
         text-align: justify;
     }
-    
+
     #button-container {
-    margin-left: var(--main-left-right-margin);
-}
+        margin-left: var(--main-left-right-margin);
+    }
 
-#logo-only {
-    display: inline-block;
-}
+    #logo-only {
+        display: inline-block;
+    }
 
-#logo-only img {
-    height: 20%;
-}
+    #logo-only img {
+        height: 20%;
+    }
 }
 
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
-  background-color: #222;
-  color: var(--body-font-color);
-  font-size: var(--body-font-size); 
-  cursor: pointer;
-  padding: 15px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 20px;
-  border-radius: 10px;
+    background-color: #222;
+    color: var(--body-font-color);
+    font-size: var(--body-font-size); 
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 20px;
+    border-radius: 10px;
 }
 .collapsible:after {
-  content: '\25BC';
-  color: #866DBA;
-  font-weight: bold;
-  float: right;
-  margin-left: 5px;
-  padding-top: 2px;
-  font-size: 0.8em;
+    content: '\25BC';
+    color: #948a55;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+    padding-top: 2px;
+    font-size: 0.8em;
 }
 
 .active:after {
-  content: "\25B2";
+    content: "\25B2";
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active, .collapsible:hover {
-  background-color: #222;
+    background-color: #222;
 }
 
 /* Style the collapsible content. Note: hidden by default */
 .content {
-  padding: 0 18px;
-  display: none;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  text-align: left;
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    text-align: left;
 }
 
 p a{
@@ -813,6 +856,6 @@ p a{
 }
 
 p a:hover{
-    color: #866DBA;
+    color: #948a55;
     text-decoration-line: none
 }
