@@ -209,24 +209,24 @@ h1 {
     border-radius: 20px;
 }
 
-#strapline {
+#header-light {
     margin-top: 10px;
     margin-bottom: 0;
 }
 
-#strapline-dark {
+#header-light-dark {
     margin-top: 20;
     margin-bottom: 10;
     color: var(--body-background-color);
 }
 
-#copy {
+#text-light {
     margin-top: 20px;
     margin-bottom: 0;
     padding: 0;
 }
 
-#copy-dark {
+#text-light-dark {
     margin-top: 3px;
     margin-bottom: 3px;
     padding: 0;
@@ -402,7 +402,7 @@ h1 {
 }
 
 
-#price-container-light {
+#sensor-vitals-section {
     background-color: #D8D8D8; 
     flex-direction: column;
     text-align: center;
@@ -704,7 +704,7 @@ h1 {
         display: none;
     }
     
-    #strapline {
+    #header-light {
         text-align: start;
     }
     
@@ -718,7 +718,7 @@ h1 {
     margin-right: 200px;
     }
     
-    #copy {
+    #text-light {
         text-align: justify;
     }
     
