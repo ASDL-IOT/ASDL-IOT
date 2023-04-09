@@ -351,7 +351,7 @@
                     pct = 100;
                 }
                 str2 = "width:" + pct.toString() + "%;";
-                if (time < 1000){
+                if (time < 1000 && time > 0){
                     str = "<i>" + sns + "'s Last Ping: T+ " + myText +"s / 600s</i> <span id=greenBar> </span>";
                 } else {
                     str = "<i style=color:#EA0606;>" + sns + " is Offline</i>";

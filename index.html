@@ -193,7 +193,7 @@
             setInterval(refreshCharts, 10000)
             
             function refreshCharts(){
-                getLastSignal("2099116", "LP1");
+                getLastSignal("2027273", "LP1");
                 getLastSignal("2099128", "LP2");
             }
 
@@ -202,7 +202,7 @@
                 let myObject = await fetch(file);
                 let myText = await myObject.text();
                 var time = parseInt(myText);
-                if (time < 1000){
+                if (time < 1000  && time > 0){
                     str = "<i>Last Ping: T+ " + myText +"s</i>"
                 } else {
                     str = "<i style=color:#EA0606;>Sensor Offline</i>"
