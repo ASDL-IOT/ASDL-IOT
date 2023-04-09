@@ -1,0 +1,350 @@
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/css-style.css">
+        <title>ASDL IoT Datapage</title>
+        <link rel="icon" href="https://www.asdl.gatech.edu/images/favicon.png">
+    </head>
+
+    <body onload="refreshCharts()">        
+        <div id="large-header">
+            <div id="large-header-container">
+                <div id="large-wordmark"><a href="index.html"><img src="images/ASDL-Logo_Main%20Logo.svg"></a></div>
+            </div>
+            <div id="menu-header-container">
+                <div id="web-menu">
+                    <div id="small-cta">
+                        <a class="menu-button" href="index.html#SensorListLink">Project List</a>
+                    </div> 
+                    <div id="small-spacer"></div>
+                    <div id="small-spacer"></div>
+                    <div id="small-cta">
+                        <a class="menu-button" href="index.html#AboutLink">About Us</a>
+                    </div> 
+                    <div id="small-spacer"></div>
+                    <div id="small-spacer"></div>
+                    <div id="small-cta">
+                        <a class="menu-button" href="index.html#ExtLink">External Links</a>
+                    </div> 
+                    <div id="small-spacer"></div>
+                    <div id="small-spacer"></div>
+                    <div id="small-cta">
+                        <a class="menu-button" href="https://forms.office.com/Pages/ResponsePage.aspx?id=u5ghSHuuJUuLem1_Mvqgg7kibaa985pOnmfQIWOFmjNUN0VDWEkzVkFSSVAzOVJPSjA0SjU5N0M2RC4u" target="_blank">Join the Team</a>
+                    </div> 
+                    <div id="small-spacer"></div>
+                </div>
+            </div>  
+        </div>
+
+        <div id="main-container">
+            <div id = "mid-buffer"></div>
+            <div id="main">
+                <h1 id="header-light">Project: Building Occupancy</h1>
+                <p id="text-light">TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT <b>TEXT TEXT TEXT </b>, TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT <b>TEXT TEXT TEXT</b>.</p><p id="text-light">TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT </p>
+            </div>
+            <div id = "mid-buffer"></div>
+
+            <div id="sensorrow">
+                <h1>Selected Sensor:</h1>
+                <select id="sensors" onchange="refreshCharts();event.preventDefault();" class="dropdown">
+                    <option value="Arcturus" >Arcturus</option>
+<!--
+                    <option value="Arcalis" >Arcalis</option>
+                    <option value="Alcyone" >Alcyone</option>
+                    <option value="Asterope">Asterope</option>
+                    <option value="Atlas"   >Atlas</option>
+-->
+                </select>
+            </div>
+            <div id = "mid-buffer"></div>
+
+            <div id="sensor-vitals-section">
+                <div id="price-content">
+                    <h1 id="header-light-dark">Sensor Vitals</h1>
+                </div>
+
+                <div id="row">
+                    <div id="halftitles">
+                        <h3 id="text-header-light-dark">Current Battery %</h3>
+                    </div>
+                    <div id="large-spacer"></div>
+                    <div id="halftitles">
+                        <h3 id="text-header-light-dark">Charge State</h3>
+                    </div>
+                </div>
+
+                <div id="row">
+                    <div id="halfcharts">
+                        <iframe id="BattWidget" src=""></iframe>
+                    </div>
+                    <div id="large-spacer"></div>
+                    <div id="halfcharts">
+                        <iframe id="StateWidget" src=""></iframe>
+                    </div>
+                </div>
+
+                <div id="small-wordmark"><a><img src="images/key.svg"></a></div>
+
+<!--
+                <div id="small-cta" style="align-self: center;">
+                    <a class="ping-button" src="test" style="margin-left:auto;width:20em;" type="button" > </a>        
+                </div>
+                <div id = "mid-buffer"></div>
+-->
+                
+                <section>
+                    <div class="progressbarWrapper" id="statusFlag"> 
+                        <span id="greenBar"> </span>
+                    </div>
+                
+                </section>
+            </div>
+
+
+            <!--Each ThingSpeak Chart-->
+            <div id = "mid-buffer"></div>
+            <div id="main">
+                <h1 id="header-light">Sensor Data</h1>
+                <p id="text-light">TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT.</p>
+                <p id="text-light">The input boxes below the charts allow you to set how many days into the past you want to see sensor data from. The default is <b>5 days</b>.</p>
+                <div id = "mid-buffer"></div>
+                <h2 id="header-light"><u>Battery</u></h2>
+            </div>
+            <div id = "mid-buffer"></div>
+
+            <div id="thingspeakcharts">
+                <iframe id="1_OUT" src=""></iframe>
+            </div>
+
+            <div id="selection-container">
+                <div id="small-cta">
+                    <input type="number" min="1" max="60" value="5" name = "Charge History" id ="1_IN" class="form-control">
+                </div> 
+                <div id="small-cta">
+                    <a class="form-button" type="button" href="#"  onclick="updateSensor(1);event.preventDefault();">Set # Days</a>
+                </div>
+            </div>
+            <div id = "midline"></div>
+
+            <!--END-->
+
+            <!--Each ThingSpeak Chart-->
+            <div id = "mid-buffer"></div>
+            <div id="main">
+                <h2 id="header-light"><u>Input Voltage</u></h2>
+            </div>
+            <div id = "mid-buffer"></div>
+
+            <div id="thingspeakcharts">
+                <iframe id="3_OUT" src=""></iframe>
+            </div>
+
+            <div id="selection-container">
+                <div id="small-cta">
+                    <input type="number" min="1" max="60" value="5" name = "Input Voltage" id ="3_IN" class="form-control">
+                </div> 
+                <div id="small-cta">
+                    <a class="form-button" type="button" href="#"  onclick="updateSensor(3);event.preventDefault();">Set # Days</a>
+                </div>
+            </div>
+            <div id = "midline"></div>
+
+            <!--END-->
+
+            <!--Each ThingSpeak Chart-->
+            <div id = "mid-buffer"></div>
+            <div id="main">
+                <h2 id="header-light"><u>Counts In</u></h2>
+            </div>
+            <div id = "mid-buffer"></div>
+            <div id="thingspeakcharts">
+                <iframe id="4_OUT" src=""></iframe>
+            </div>
+
+            <div id="selection-container">
+                <div id="small-cta">
+                    <input type="number" min="1" max="60" value="5" name = "Counts In" id ="4_IN" class="form-control">
+                </div> 
+                <div id="small-cta">
+                    <a class="form-button" type="button" href="#"  onclick="updateSensor(4);event.preventDefault();">Set # Days</a>
+                </div>
+            </div>
+            <div id = "midline"></div>
+            <!--END-->
+
+            <!--Each ThingSpeak Chart-->
+            <div id = "mid-buffer"></div>
+            <div id="main">
+                <h2 id="header-light"><u>Counts Out</u></h2>
+            </div>
+            <div id = "mid-buffer"></div>
+            <div id="thingspeakcharts">
+                <iframe id="5_OUT" src=""></iframe>
+            </div>
+
+            <div id="selection-container">
+                <div id="small-cta">
+                    <input type="number" min="1" max="60" value="5" name = "Counts Out" id ="5_IN" class="form-control">
+                </div> 
+                <div id="small-cta">
+                    <a class="form-button" type="button" href="#"  onclick="updateSensor(5);event.preventDefault();">Set # Days</a>
+                </div>
+            </div>
+
+            <div id = "midline"></div>
+            <!--END-->
+
+            <!--Each ThingSpeak Chart-->
+            <div id = "mid-buffer"></div>
+            <div id="main">
+                <h2 id="header-light"><u>Occupancy Change</u></h2>
+            </div>
+            <div id = "mid-buffer"></div>
+            <div id="thingspeakcharts">
+                <iframe id="6_OUT" src=""></iframe>
+            </div>
+
+            <div id="selection-container">
+                <div id="small-cta">
+                    <input type="number" min="1" max="60" value="5" name = "Occupancy Change" id ="6_IN" class="form-control">
+                </div> 
+                <div id="small-cta">
+                    <a class="form-button" type="button" href="#"  onclick="updateSensor(6);event.preventDefault();">Set # Days</a>
+                </div>
+            </div>
+
+            <div id = "midline"></div>
+            <!--END-->
+
+            <div id="price-container">
+                <div id="price-content">
+                    <h1 id="header-light">Sensor Location</h1>
+                </div>
+                <div id = "mid-buffer"></div>
+                <div id="thingspeakcharts">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d829.0592913692578!2d-84.38813947075961!3d33.780373213485305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzPCsDQ2JzQ5LjMiTiA4NMKwMjMnMTUuMyJX!5e0!3m2!1sen!2sus!4v1675053379814!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div id = "mid-buffer"></div>
+                <div id = "mid-buffer"></div>
+
+                <div id="thingspeakcharts">
+                    <img src="images/img.jpg">
+                </div>
+                <div id = "mid-buffer"></div>
+                <div id = "mid-buffer"></div>
+                <div id = "mid-buffer"></div>
+            </div>
+        </div>
+
+        <!-- Scripts that manage chart data points -->  
+
+        <script>
+
+            var thingspeak = "https://thingspeak.com/channels/";
+            var ChannelID;
+            var BattWidgetID;
+            var StateWidgetID;
+            var UpdateFrequency = 600;
+
+            IDs();
+            setInterval(updateFlags, 10000);
+
+            function refreshCharts(){
+                updateSensor("1"); //Charge Level
+                updateSensor("3"); //Input Voltage Level
+                updateSensor("4"); //CO2 Level
+                updateSensor("5"); //Temperature Level
+                updateSensor("6"); //Humidity Level
+                //updateSensor("7"); //Pressure Level
+
+                updateWidgets();   //Sensor Vitals
+            }
+
+            function IDs(){
+                var sns = document.getElementById("sensors").value;
+                switch(sns) {
+                    case "Arcturus":
+                        ChannelID = "2099128";
+                        BattWidgetID = "628448";
+                        StateWidgetID = "628451";
+                        break;
+//                    case "Arcalis":
+//                        ChannelID = "2099106";
+//                        BattWidgetID = "628045";
+//                        StateWidgetID = "628046";
+//                        break;
+//                    case "Alcyone":
+//                        ChannelID = "2099110";
+//                        BattWidgetID = "628052";
+//                        StateWidgetID = "628053";
+//                        break;
+//                    case "Asterope":
+//                        ChannelID = "2099111";
+//                        BattWidgetID = "628050";
+//                        StateWidgetID = "628051";
+//                        break;
+//                    case "Atlas":
+//                        ChannelID = "2099116";
+//                        BattWidgetID = "628055";
+//                        StateWidgetID = "628056";
+//                        break;
+                }
+            }
+
+            function updateFlags(){
+                getLastSignal(ChannelID);
+            }
+
+            function updateSensor(element){
+                var inputID  = element + "_IN";
+                var outputID = element + "_OUT";
+
+                IDs();
+                var chg = document.getElementById(inputID).value;
+                chg = Math.round(chg);
+
+                var ttl = document.getElementById(inputID).name;
+
+                if (element == "6"){
+                    var strType = "column";
+                } else {
+                    var strType = "spline";
+                }
+                
+                strOUT = thingspeak + ChannelID + "/charts/" + element + "?width=auto&height=auto&days=" + chg.toString() + "&dynamic=true&title=" + ttl + "&type=" + strType;
+                document.getElementById(outputID).src=strOUT;
+
+                getLastSignal(ChannelID);
+            }
+
+            function updateWidgets(){
+                strOUT = thingspeak + ChannelID + "/widgets/";
+                document.getElementById("BattWidget").src=strOUT+BattWidgetID;
+                document.getElementById("StateWidget").src=strOUT+StateWidgetID;
+            }
+
+            async function getLastSignal(channel) {
+                var sns = document.getElementById("sensors").value;
+
+                let file = "https://api.thingspeak.com/channels/" + channel + "/fields/1/last_data_age.txt";
+                let myObject = await fetch(file);
+                let myText = await myObject.text();
+                var time = parseInt(myText);
+                var pct = Math.round(100*time/UpdateFrequency);
+                if (pct > 100){
+                    pct = 100;
+                }
+                str2 = "width:" + pct.toString() + "%;";
+                if (time < 1000 && time > 0){
+                    str = "<i>" + sns + "'s Last Ping: T+ " + myText +"s / 600s</i> <span id=greenBar> </span>";
+                } else {
+                    str = "<i style=color:#EA0606;>" + sns + " is Offline</i>";
+                }
+                document.getElementById("statusFlag").innerHTML = str;
+                document.getElementById("greenBar").style = str2;
+            }
+
+        </script>
+    </body>
+</html>
