@@ -1,12 +1,12 @@
 <html lang="en">
-    
+
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/css-style.css">
         <title>ASDL IoT Datapage</title>
         <link rel="icon" href="https://www.asdl.gatech.edu/images/favicon.png">
     </head>
-    
+
     <body onload="refreshCharts()">        
         <div id="large-header">
             <div id="large-header-container">
@@ -57,20 +57,24 @@
             <div id="sensor-vitals-section">
                 <div id="price-content">
                     <div class="anchor" id="SensorListLink"></div><h1 id="header-light-dark">Project List</h1>
-                    <p id="text-light-dark" >A list of registered sensors and their rough purpose can be found below. Next to each sensor is a point showing the last time (in GMT - 0500) that the sensor uploaded data to the cloud. This is a good metric of if the sensor is online and functioning. <b>Click on a project's name</b> to view more specifics about what it does, what sensors are on it, and its recorded data.</p>
+                    <p id="text-light-dark" >A list of current projects and their rough purpose can be found below. Next to each sensor is a meter that shows the last time a sensor from this project posted data. This is a good metric as to whether the project is currently online. Note that sensors only update data on 10-15 minute intervals. <b>Click on a project's name</b> to view more specifics about what it does, what sensors are on it, and its recorded data.</p>
+                    <div id = "mid-buffer"></div>
+                    <p id="text-light-dark" >The CNES Air Quality project uses a set of five 4G-LTE connnected air quality sensors to monitor the Georgia Tech Carbon-Neutral Energy Solutions Laboratory. Click on the project to see what kind of data the sensors collect!</p>
+                    <div id = "mid-buffer"></div>
+                    <p id="text-light-dark" >The Building Occupancy project uses sensors across the entryways of buildings to estimate the number of people that enter and exit. This is a work-in-progress and currently only has one sensor connected (for testing purposes).</p>
                 </div>
 
 
                 <div id="row">
                     <div id="halftitles">
                         <div id="small-cta">
-                            <a class="sensor-button" type="button" href="CNES.html">CNES Air Quality</a>
+                            <a class="sensor-button" id="CNES Air Quality" type="button" href="CNES.html">CNES Air Quality</a>
                         </div>  
                     </div>
                     <div id="large-spacer"></div>
                     <div id="halftitles">
-                        <div id="thingspeakstatus">
-                            <iframe id="IVlevel" src="https://thingspeak.com/channels/2027273/charts/1?width=auto&height=100&dynamic=true&results=1&title= Last Ping (GMT-0500)&type=spline&xaxis=&yaxis="></iframe>
+                        <div id="small-cta">
+                            <a class="ping-button" type="button" id="LP1"> </a>
                         </div>
 
                     </div>
@@ -84,9 +88,12 @@
                     </div>
                     <div id="large-spacer"></div>
                     <div id="halftitles">
-                        <div id="thingspeakstatus">
-                            <iframe id="IVlevel" src="https://thingspeak.com/channels/2027467/charts/1?width=auto&height=100&dynamic=true&results=1&title= Last Ping (GMT-0500)&type=spline&xaxis=&yaxis="></iframe>
+
+
+                        <div id="small-cta">
+                            <a class="ping-button" type="button" id="LP2"> </a>
                         </div>
+
 
                     </div>
                 </div>
@@ -166,9 +173,9 @@
                     <div class="anchor" id="ExtLink"></div><h1 id="header-light">External Links</h1>
                 </div>
                 <div id="main">
-                <p id="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                <div id = "mid-buffer"></div>
-            </div>
+                    <p id="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <div id = "mid-buffer"></div>
+                </div>
                 <div id="thingspeakcharts">
                     <embed src="https://energywatch.gatech.edu/" style="width:100%; height: 500px;">
                 </div>
@@ -182,48 +189,26 @@
         </div>
 
         <!-- Scripts that manage chart data points -->  
-
-        <script>  
-            function firstLoad(){
-                updateChargeNum();
-                updateSVNum();
-                updateRVNum();
+        <script>
+            setInterval(refreshCharts, 10000)
+            
+            function refreshCharts(){
+                getLastSignal("2099116", "LP1");
+                getLastSignal("2099128", "LP2");
             }
 
-            function updateChargeNum() {
-                let str1 = "https://thingspeak.com/channels/2010573/charts/1?width=auto&height=auto&bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=";
-                let str2 = "&type=line&update=15"
-                var chg = document.getElementById("chargenum").value;
-
-                let str3 = str1+chg.toString()+str2;
-
-                document.getElementById("chargelevel").src=str3;
+            async function getLastSignal(channel, HTMLItem) {
+                let file = "https://api.thingspeak.com/channels/" + channel + "/fields/1/last_data_age.txt";
+                let myObject = await fetch(file);
+                let myText = await myObject.text();
+                var time = parseInt(myText);
+                if (time < 1000){
+                    str = "<i>Last Ping: T+ " + myText +"s</i>"
+                } else {
+                    str = "<i style=color:#EA0606;>Sensor Offline</i>"
+                }
+                document.getElementById(HTMLItem).innerHTML = str;
             }
-
-            function updateSVNum() {
-                let str1 = "https://thingspeak.com/channels/2010573/charts/3?width=auto&height=auto&bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=";
-                let str2 = "&title=Solar+Panel+Voltage&type=line"
-                var chg = document.getElementById("SVnum").value;
-
-                let str3 = str1+chg.toString()+str2;
-
-                document.getElementById("SVlevel").src=str3;
-            }
-
-            function updateRVNum() {
-                let str1 = "https://thingspeak.com/channels/2010573/charts/4?width=auto&height=auto&bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=";
-                let str2 = "&title=Regulator+Voltage&type=line"
-                var chg = document.getElementById("RVnum").value;
-
-                let str3 = str1+chg.toString()+str2;
-
-                document.getElementById("RVlevel").src=str3;
-            }
-
-
-
-
-
         </script>
     </body>
 </html>
