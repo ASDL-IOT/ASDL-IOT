@@ -41,7 +41,9 @@
             <div id = "mid-buffer"></div>
             <div id="main">
                 <h1 id="header-light">Project: Building Occupancy</h1>
-                <p id="text-light">TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT <b>TEXT TEXT TEXT </b>, TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT <b>TEXT TEXT TEXT</b>.</p><p id="text-light">TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT </p>
+                <p id="text-light">This project sought to develop a <b>low-cost, non-intrusive, and highly-scalable</b> building occupancy sensor capable of detecting <b>bi-directional motion</b> at accessways.This data is useful for the efficient utilization of building resources, and allows building operations to operate proactively rather than reactively. More data, from affordable and reliable sensors, is critical for characterizing building efficiency. Counts provided are the summed total of transits within the last <b> 10 minutes.</b></p>
+                
+                <p id="text-light">This project seeks to accomplish these goals by setting the stage for 4G-LTE based door-mounted sensor networks to estimate the occupancy flux of a building. Data from the first prototype, Arcturus, is found here.</p>
             </div>
             <div id = "mid-buffer"></div>
 
@@ -106,8 +108,8 @@
             <div id = "mid-buffer"></div>
             <div id="main">
                 <h1 id="header-light">Sensor Data</h1>
-                <p id="text-light">TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT.</p>
-                <p id="text-light">The input boxes below the charts allow you to set how many days into the past you want to see sensor data from. The default is <b>5 days</b>.</p>
+                <p id="text-light">This sensor package uses a set of IR Time of Flight sensors to detect directional motion by comparing the falling edge times of sensor readings. This method allows for a relatively simple method of people counting, that still provides the sub-5% error we are looking for. Similar to the IAQ device, Battery and Input Voltage are monitored by the Boron404X.</p>
+                <p id="text-light">The input boxes below the charts allow you to set how many days into the past you want to see sensor data from. The default is <b>10 days</b>.</p>
                 <div id = "mid-buffer"></div>
                 <h2 id="header-light"><u>Battery</u></h2>
             </div>
@@ -119,7 +121,7 @@
 
             <div id="selection-container">
                 <div id="small-cta">
-                    <input type="number" min="1" max="60" value="5" name = "Charge History" id ="1_IN" class="form-control">
+                    <input type="number" min="1" max="60" value="10" name = "Charge History" id ="1_IN" class="form-control">
                 </div> 
                 <div id="small-cta">
                     <a class="form-button" type="button" href="#"  onclick="updateSensor(1);event.preventDefault();">Set # Days</a>
@@ -142,7 +144,7 @@
 
             <div id="selection-container">
                 <div id="small-cta">
-                    <input type="number" min="1" max="60" value="5" name = "Input Voltage" id ="3_IN" class="form-control">
+                    <input type="number" min="1" max="60" value="10" name = "Input Voltage" id ="3_IN" class="form-control">
                 </div> 
                 <div id="small-cta">
                     <a class="form-button" type="button" href="#"  onclick="updateSensor(3);event.preventDefault();">Set # Days</a>
@@ -164,7 +166,7 @@
 
             <div id="selection-container">
                 <div id="small-cta">
-                    <input type="number" min="1" max="60" value="5" name = "Counts In" id ="4_IN" class="form-control">
+                    <input type="number" min="1" max="60" value="10" name = "Counts In" id ="4_IN" class="form-control">
                 </div> 
                 <div id="small-cta">
                     <a class="form-button" type="button" href="#"  onclick="updateSensor(4);event.preventDefault();">Set # Days</a>
@@ -185,7 +187,7 @@
 
             <div id="selection-container">
                 <div id="small-cta">
-                    <input type="number" min="1" max="60" value="5" name = "Counts Out" id ="5_IN" class="form-control">
+                    <input type="number" min="1" max="60" value="10" name = "Counts Out" id ="5_IN" class="form-control">
                 </div> 
                 <div id="small-cta">
                     <a class="form-button" type="button" href="#"  onclick="updateSensor(5);event.preventDefault();">Set # Days</a>
@@ -207,7 +209,7 @@
 
             <div id="selection-container">
                 <div id="small-cta">
-                    <input type="number" min="1" max="60" value="5" name = "Occupancy Change" id ="6_IN" class="form-control">
+                    <input type="number" min="1" max="60" value="10" name = "Occupancy Change" id ="6_IN" class="form-control">
                 </div> 
                 <div id="small-cta">
                     <a class="form-button" type="button" href="#"  onclick="updateSensor(6);event.preventDefault();">Set # Days</a>

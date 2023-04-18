@@ -105,75 +105,37 @@
             <!--Each ThingSpeak Chart-->
             <div id = "mid-buffer"></div>
             <div id="main">
-                <div class="anchor" id="AboutLink"></div><h1 id="header-light">About the Project</h1>
-                <p id="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                <div class="anchor" id="AboutLink"></div><h1 id="header-light">About the Projects</h1>
+                <p id="text-light">These projects seek to provide lower-cost, higher-reliability Internet of Things (IoT) connected sensors to help improve the efficiency of building operations. This data allows building operations to operate proactively rather than reactively. By finding ways to improve upon the uptime and ease-of-setup of these IoT devices, more data can be collected with less effort.</p>
+                <p id="text-light">One of the primary hurdles to overcome with uptime reliability is with communication protocol. Hard wired devices have a high setup difficulty, and low flexibility. Wi-Fi devices are easier to set up, but must be placed indoors, and are dependent on the Wi-Fi reliability of the building. We sought to use 4G-LTE connected devices to gain even more flexibility than Wi-Fi. By using 4G-LTE, data can be pushed from anywhere within the carrier's coverage range. The device can be moved anywhere within a building, to another building, or placed outside - where access points can't reach. </p>
+                <p id="text-light">Operating outside of Wi-Fi also has the benefit of being able to sustain operations through power or network outages. The projects featured here have built-in battery supplies, allowing them to operate for days without input power. Through firmware improvements, this off-wall time can be improved to weeks. Because the device can report its power status with the other data, these sensors can also be used to detect and monitor power outages and solar panel power intake.</p>
+                <p id="text-light">The challenge with cellular-based systems is the need for a custom data processing backend. Existing on a campus' local network allows data to be easily published and stored in a local server. Operating off-network means that this processing must be done through third-parties to achieve the same effect. A flow chart of our process is shown below.
+                
                 <div id = "mid-buffer"></div>
-                <h2 id="header-light"><u>SENSOR-NAME Battery</u></h2>
-            </div>
-            <div id = "mid-buffer"></div>
-
-
-
-            <div id="selection-container">
-                <div id="small-cta">
-                    <input type="number" min="1" max="20000" value="10000" id ="chargenum" class="form-control">
-                </div> 
-                <div id="small-cta">
-                    <a class="form-button" type="button" href="#"  onclick="updateChargeNum();event.preventDefault();">Set # Points</a>
+                
+                <div id="thingspeakcharts">
+                    <img src="images/flow.png">
                 </div>
-            </div>
-            <div id = "midline"></div>
-
-            <!--END-->
-
-            <!--Each ThingSpeak Chart-->
-            <div id = "mid-buffer"></div>
-            <div id="main">
-                <h2 id="header-light"><u>SENSOR-NAME Solar Panel Voltage</u></h2>
+                
+                <p id="text-light">In general, the hardware falls under the "Local Services" category. This portion of the flow chart describes the systems that are responsible for measuring, processing, and transmitting data. One of the internal air quality (CNES) boards would be a local device. This device uses a 4G provider to send data, on a specified interval, to the "Cloud Services" category. In this category, data is received from the sensors, stored, and published to other necessary services. The "Sensor Console" is a combined management tool that allows us to observe the health of a given fleet of sensors, reset devices remotely, and observe raw incoming data streams. The "Sensor Cloud" is then responsible for publishing data to other services, and Over the Air (OTA) programming. This feature allows us to update and reprogram devices completely remotely, even if they are installed on site. This section is also where we use webhooks to send our data to our visualizer and data storage repositories. Lastly, this website displays the visualized data, acting as the final step in the interface between the physical sensor and the user. </p>
+                <p id="text-light">While these systems have only been applied to the two projects listed, they have been set up in a versatile way and could be applied to a number of other projects. The capability of the cellular systems has  thus far proven highly reliabile, with a 100% success rate in data publishes since setting up these devices. This rate may be affected by especially poor cellular performance (such as in basements), but future firmware updates could improve the likelihood of success in those environments.</p>
+                <p id="text-light">If you are interested in learning more about this project, or the other projects the greater EnergyWatch team works on, feel free to click the "Join the Team" button, or scroll through the ASDL EnergyWatch page below.</p>
+                <div id = "mid-buffer"></div>
+                
             </div>
             <div id = "mid-buffer"></div>
 
 
-
-            <div id="selection-container">
-                <div id="small-cta">
-                    <input type="number" min="1" max="20000" value="10000" id ="SVnum" class="form-control">
-                </div> 
-                <div id="small-cta">
-                    <a class="form-button" type="button" href="#"  onclick="updateSVNum();event.preventDefault();">Set # Points</a>
-                </div>
-            </div>
-            <div id = "midline"></div>
-
-            <!--END-->
-
-            <!--Each ThingSpeak Chart-->
-            <div id = "mid-buffer"></div>
-            <div id="main">
-                <h2 id="header-light"><u>SENSOR-NAME Regulator Voltage</u></h2>
-            </div>
-            <div id = "mid-buffer"></div>
-
-
-            <div id="selection-container">
-                <div id="small-cta">
-                    <input type="number" min="1" max="20000" value="10000" id ="RVnum" class="form-control">
-                </div> 
-                <div id="small-cta">
-                    <a class="form-button" type="button" href="#"  onclick="updateRVNum();event.preventDefault();">Set # Points</a>
-                </div>
-            </div>
-
-            <div id = "mid-buffer"></div>
-            <!--END-->
 
 
             <div id="price-container">
                 <div id="price-content">
                     <div class="anchor" id="ExtLink"></div><h1 id="header-light">External Links</h1>
+                    
                 </div>
                 <div id="main">
-                    <p id="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <h2 id="header-light"><u>EnergyWatch</u></h2>
+                    <p id="text-light">This website is the ASDL EnergyWatch homepage. It is a repository of various energy efficiency, building management, and other environmental analysis projects. Scroll around, or click the "About Us" button (external redirect) to learn more. </p>
                     <div id = "mid-buffer"></div>
                 </div>
                 <div id="thingspeakcharts">
@@ -181,6 +143,33 @@
                 </div>
                 <div id = "mid-buffer"></div>
                 <div id = "mid-buffer"></div>
+                
+
+                <div id="main">
+                    <h2 id="header-light"><u>People Counter Presentation (April 2023)</u></h2>
+                    <p id="text-light">This presentation describes some of the technical information behind the people counting system, its development, and its future steps. This short presentation was given at the Kendeda Micro Grant Symposium in April of 2023.  </p>
+                    <div id = "mid-buffer"></div>
+                </div>
+                <div id="thingspeakcharts">
+                            <object data= "pdfs/MGP.pdf"
+                width="100%"; 
+                height="500"> 
+        </object>
+                </div>
+                <div id = "mid-buffer"></div>
+                <div id = "mid-buffer"></div>
+                
+                                <div id="main">
+                    <h2 id="header-light"><u>Image Gallery</u></h2>
+                    <p id="text-light">Scroll through this gallery to see images of the devices, their prototypes, and the development process. These photos include both early and current prototypes for the CNES and building occupancy projects.</p>
+                    <div id = "mid-buffer"></div>
+                </div>
+                <div id="thingspeakcharts">
+                    <a data-flickr-embed="true" href="https://www.flickr.com/photos/198125394@N02/albums/72177720307580911" title="ASDL IoT Gallery"><img src="https://live.staticflickr.com/65535/52826403234_83c1d2c81b_b.jpg" width="100%" height="768" alt="ASDL IoT Gallery"/></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+                </div>
+                <div id = "mid-buffer"></div>
+                <div id = "mid-buffer"></div>
+                
             </div>
 
             <div id="cta">
