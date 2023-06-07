@@ -307,13 +307,10 @@
             function updateSensor(element){
                 var inputID  = 1 + "_IN";
                 var outputID = element + "_OUT";
-                var titleID = element + "_IN";
 
                 IDs();
                 var chg = document.getElementById(inputID).value;
                 chg = Math.round(chg);
-
-                var ttl = document.getElementById(titleID).name;
 
                 if (element == "6"){
                     var strType = "column";
