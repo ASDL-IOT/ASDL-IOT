@@ -61,17 +61,7 @@
             </div>
             <div id = "mid-buffer"></div>
             
-            <!--Each ThingSpeak Chart-->
-            <div id="selection-container">
-                <div id="small-cta">
-                    <input type="number" min="1" max="60" value="10" name = "Counts In" id ="4_IN" class="form-control">
-                </div> 
-                <div id="small-cta">
-                    <a class="form-button" type="button" href="#"  onclick="updateSensor(4);updateSensor(5);updateSensor(6);event.preventDefault();">Set # Days</a>
-                </div>
-            </div>
-            <div id = "midline"></div>
-            
+            <!--Each ThingSpeak Chart-->         
             <div id = "mid-buffer"></div>
             <div id="main">
                 <h1 id="header-light">Sensor Data</h1>
@@ -84,7 +74,14 @@
             <div id="thingspeakcharts">
                 <iframe id="4_OUT" src=""></iframe>
             </div>
-
+            <div id="selection-container">
+                <div id="small-cta">
+                    <input type="number" min="1" max="60" value="10" name = "Counts In" id ="1_IN" class="form-control">
+                </div> 
+                <div id="small-cta">
+                    <a class="form-button" type="button" href="#"  onclick="updateSensor(1);updateSensor(2);updateSensor(3);updateSensor(4);updateSensor(5);updateSensor(6);event.preventDefault();">Set # Days</a>
+                </div>
+            </div>
             <div id = "midline"></div>
             <!--END-->
 
@@ -98,14 +95,14 @@
                 <iframe id="5_OUT" src=""></iframe>
             </div>
 
-            <div id="selection-container">
+            <!--<div id="selection-container">
                 <div id="small-cta">
                     <input type="number" min="1" max="60" value="10" name = "Counts Out" id ="5_IN" class="form-control">
                 </div> 
                 <div id="small-cta">
                     <a class="form-button" type="button" href="#"  onclick="updateSensor(5);event.preventDefault();">Set # Days</a>
                 </div>
-            </div>
+            </div>-->
 
             <div id = "midline"></div>
             <!--END-->
@@ -120,14 +117,14 @@
                 <iframe id="6_OUT" src=""></iframe>
             </div>
 
-            <div id="selection-container">
+            <!--<div id="selection-container">
                 <div id="small-cta">
                     <input type="number" min="1" max="60" value="10" name = "Occupancy Change" id ="6_IN" class="form-control">
                 </div> 
                 <div id="small-cta">
                     <a class="form-button" type="button" href="#"  onclick="updateSensor(6);event.preventDefault();">Set # Days</a>
                 </div>
-            </div>
+            </div>-->
 
             <div id = "midline"></div>
             <!--END-->
@@ -143,14 +140,14 @@
                 <iframe id="1_OUT" src=""></iframe>
             </div>
 
-            <div id="selection-container">
+            <!--<div id="selection-container">
                 <div id="small-cta">
                     <input type="number" min="1" max="60" value="10" name = "Charge History" id ="1_IN" class="form-control">
                 </div> 
                 <div id="small-cta">
                     <a class="form-button" type="button" href="#"  onclick="updateSensor(1);event.preventDefault();">Set # Days</a>
                 </div>
-            </div>
+            </div>-->
             <div id = "midline"></div>
 
             <!--END-->
@@ -166,14 +163,14 @@
                 <iframe id="3_OUT" src=""></iframe>
             </div>
 
-            <div id="selection-container">
+            <!--<div id="selection-container">
                 <div id="small-cta">
                     <input type="number" min="1" max="60" value="10" name = "Input Voltage" id ="3_IN" class="form-control">
                 </div> 
                 <div id="small-cta">
                     <a class="form-button" type="button" href="#"  onclick="updateSensor(3);event.preventDefault();">Set # Days</a>
                 </div>
-            </div>
+            </div>-->
             <div id = "midline"></div>
 
             <!--END-->
@@ -301,7 +298,7 @@
             }
 
             function updateSensor(element){
-                var inputID  = 4 + "_IN";
+                var inputID  = 1 + "_IN";
                 var outputID = element + "_OUT";
 
                 IDs();
