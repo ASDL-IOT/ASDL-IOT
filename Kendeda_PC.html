@@ -306,13 +306,14 @@
 
             function updateSensor(element){
                 var inputID  = 1 + "_IN";
+                var inputID2  = element + "_IN";
                 var outputID = element + "_OUT";
 
                 IDs();
                 var chg = document.getElementById(inputID).value;
                 chg = Math.round(chg);
 
-                var ttl = document.getElementById(element + "_IN").name;
+                var ttl = document.getElementById(inputID2).name;
 
                 if (element == "6"){
                     var strType = "column";
