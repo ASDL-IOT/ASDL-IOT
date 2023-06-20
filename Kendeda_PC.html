@@ -50,7 +50,7 @@
             <div id="sensorrow">
                 <h1>Selected Sensor:</h1>
                 <select id="sensors" onchange="refreshCharts();event.preventDefault();" class="dropdown">
-                    <option value="Polaris" >Polaris</option>
+                    <option value="Arcturus" >Polaris</option>
 <!--
                     <option value="Arcalis" >Arcalis</option>
                     <option value="Alcyone" >Alcyone</option>
@@ -273,7 +273,7 @@
             function IDs(){
                 var sns = document.getElementById("sensors").value;
                 switch(sns) {
-                    case "Polaris":
+                    case "Arcturus":
                         ChannelID = "2099128";
                         BattWidgetID = "628448";
                         StateWidgetID = "628451";
