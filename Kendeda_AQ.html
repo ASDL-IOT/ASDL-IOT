@@ -88,15 +88,6 @@
                 <iframe id="5_OUT" src=""></iframe>
             </div>
 
-            <div id="selection-container">
-                <div id="small-cta">
-                    <input type="number" min="1" max="60" value="5" name = "Temperature Levels" id ="5_IN" class="form-control">
-                </div> 
-                <div id="small-cta">
-                    <a class="form-button" type="button" href="#"  onclick="updateSensor(5);event.preventDefault();">Set # Days</a>
-                </div>
-            </div>
-
             <div id = "midline"></div>
             <!--END-->
 
@@ -109,13 +100,7 @@
             <div id="thingspeakcharts">
                 <iframe id="6_OUT" src=""></iframe>
             </div>
-
-            <div id="selection-container">
-                <div id="small-cta">
-                    <input type="number" min="1" max="60" value="5" name = "Humidity Levels" id ="6_IN" class="form-control">
-                </div> 
-            </div>
-
+            
             <div id = "midline"></div>
             <!--END-->
 
@@ -127,15 +112,6 @@
             <div id = "mid-buffer"></div>
             <div id="thingspeakcharts">
                 <iframe id="7_OUT" src=""></iframe>
-            </div>
-
-            <div id="selection-container">
-                <div id="small-cta">
-                    <input type="number" min="1" max="60" value="5" name = "Pressure Levels" id ="7_IN" class="form-control">
-                </div> 
-                <div id="small-cta">
-                    <a class="form-button" type="button" href="#"  onclick="updateSensor(7);event.preventDefault();">Set # Days</a>
-                </div>
             </div>
 
             <div id = "mid-buffer"></div>
@@ -153,14 +129,6 @@
                 <iframe id="1_OUT" src=""></iframe>
             </div>
 
-            <div id="selection-container">
-                <div id="small-cta">
-                    <input type="number" min="1" max="60" value="5" name = "Charge History" id ="1_IN" class="form-control">
-                </div> 
-                <div id="small-cta">
-                    <a class="form-button" type="button" href="#"  onclick="updateSensor(1);event.preventDefault();">Set # Days</a>
-                </div>
-            </div>
             <div id = "midline"></div>
 
             <!--END-->
@@ -176,14 +144,6 @@
                 <iframe id="3_OUT" src=""></iframe>
             </div>
 
-            <div id="selection-container">
-                <div id="small-cta">
-                    <input type="number" min="1" max="60" value="5" name = "Input Voltage" id ="3_IN" class="form-control">
-                </div> 
-                <div id="small-cta">
-                    <a class="form-button" type="button" href="#"  onclick="updateSensor(3);event.preventDefault();">Set # Days</a>
-                </div>
-            </div>
             <div id = "midline"></div>
 
             <!--END-->
@@ -317,8 +277,6 @@
                 IDs();
                 var chg = document.getElementById(inputID).value;
                 chg = Math.round(chg);
-
-                var ttl = document.getElementById(inputID).name;
 
                 strOUT = thingspeak + ChannelID + "/charts/" + element + "?width=auto&height=auto&days=" + chg.toString() + "&dynamic=true&title=" + ttl + "&type=spline";
                 document.getElementById(outputID).src=strOUT;
