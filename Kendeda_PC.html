@@ -130,101 +130,7 @@
             <div id = "mid-buffer"></div>
             <div id = "midline"></div>
             <!--END-->
-            
-            <!--Each ThingSpeak Chart-->
-            <div id = "mid-buffer"></div>
-            <div id="main">
-                <h2 id="header-light"><u>Battery</u></h2>
-            </div>
-            <div id = "mid-buffer"></div>
-
-            <div id="thingspeakcharts">
-                <iframe id="1_OUT" src=""></iframe>
-            </div>
-
-            <!--<div id="selection-container">
-                <div id="small-cta">
-                    <input type="number" min="1" max="60" value="10" name = "Charge History" id ="1_IN" class="form-control">
-                </div> 
-                <div id="small-cta">
-                    <a class="form-button" type="button" href="#"  onclick="updateSensor(1);event.preventDefault();">Set # Days</a>
-                </div>
-            </div>-->
-            
-            <div id = "mid-buffer"></div>
-            <div id = "midline"></div>
-            
-            <!--END-->
-
-            <!--Each ThingSpeak Chart-->
-            <div id = "mid-buffer"></div>
-            <div id="main">
-                <h2 id="header-light"><u>Input Voltage</u></h2>
-            </div>
-            <div id = "mid-buffer"></div>
-
-            <div id="thingspeakcharts">
-                <iframe id="3_OUT" src=""></iframe>
-            </div>
-
-            <!--<div id="selection-container">
-                <div id="small-cta">
-                    <input type="number" min="1" max="60" value="10" name = "Input Voltage" id ="3_IN" class="form-control">
-                </div> 
-                <div id="small-cta">
-                    <a class="form-button" type="button" href="#"  onclick="updateSensor(3);event.preventDefault();">Set # Days</a>
-                </div>
-            </div>-->
-            
-            <div id = "mid-buffer"></div>
-            <div id = "midline"></div>
-            <div id = "mid-buffer"></div>
-            
-            <!--END-->
-            
-            <div id="sensor-vitals-section">
-                <div id="price-content">
-                    <h1 id="header-light-dark">Sensor Vitals</h1>
-                </div>
-
-                <div id="row">
-                    <div id="halftitles">
-                        <h3 id="text-header-light-dark">Current Battery %</h3>
-                    </div>
-                    <div id="large-spacer"></div>
-                    <div id="halftitles">
-                        <h3 id="text-header-light-dark">Charge State</h3>
-                    </div>
-                </div>
-
-                <div id="row">
-                    <div id="halfcharts">
-                        <iframe id="BattWidget" src=""></iframe>
-                    </div>
-                    <div id="large-spacer"></div>
-                    <div id="halfcharts">
-                        <iframe id="StateWidget" src=""></iframe>
-                    </div>
-                </div>
-
-                <div id="small-wordmark"><a><img src="images/key.svg"></a></div>
-
-
-                <div id="small-cta" style="align-self: center;">
-                    <a class="ping-button" src="test" style="margin-left:auto;width:20em;" type="button" > </a>        
-                </div>
-                <div id = "mid-buffer"></div>
-
-                
-                <section>
-                    <div class="progressbarWrapper" id="statusFlag"> 
-                        <span id="greenBar"> </span>
-                    </div>
-                
-                </section>
-            </div>
-            
-            <div id = "midline"></div>
+           
             
             <div id="price-container">
                 <div id="price-content">
@@ -260,14 +166,11 @@
             setInterval(updateFlags, 10000);
 
             function refreshCharts(){
-                updateSensor("1"); //Charge Level
-                updateSensor("3"); //Input Voltage Level
                 updateSensor("4"); //CO2 Level
                 updateSensor("5"); //Temperature Level
                 updateSensor("6"); //Humidity Level
                 //updateSensor("7"); //Pressure Level
 
-                updateWidgets();   //Sensor Vitals
             }
 
             function IDs(){
@@ -325,12 +228,6 @@
                 document.getElementById(outputID).src=strOUT;
 
                 getLastSignal(ChannelID);
-            }
-
-            function updateWidgets(){
-                strOUT = thingspeak + ChannelID + "/widgets/";
-                document.getElementById("BattWidget").src=strOUT+BattWidgetID;
-                document.getElementById("StateWidget").src=strOUT+StateWidgetID;
             }
 
             async function getLastSignal(channel) {
