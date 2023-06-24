@@ -277,7 +277,9 @@
                 IDs();
                 var chg = document.getElementById(inputID).value;
                 chg = Math.round(chg);
-
+                
+                var ttl = "Data";
+                
                 strOUT = thingspeak + ChannelID + "/charts/" + element + "?width=auto&height=auto&days=" + chg.toString() + "&dynamic=true&title=" + ttl + "&type=spline";
                 document.getElementById(outputID).src=strOUT;
 
